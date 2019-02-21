@@ -1,0 +1,5 @@
+name: SubGapAPI
+author: Ocean Sharma
+main: ca.skmo.subgapapi.SubGapAPI
+version: 1.0.0
+description: PewDiePie vs. T-Series sub gap API.
