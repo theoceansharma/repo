@@ -72,12 +72,12 @@ public class SubGapAPI extends JavaPlugin {
     }
 		
 	// Returns specified YouTuber's sub count
-	public int getSubCount(String channelId) throws IOException {
+	public int getSubCount(String channelId, String apiKey) throws IOException {
 		int subCount = 0;
 		int start = 0;
 		int end = 0;
 		
-		String doc = Jsoup.connect("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channelId + "&key=AIzaSyA5rSwXm6sbbWMIM-AT1HEnxgiUlNIDtkw").userAgent("Mozilla").ignoreContentType(true).get().html();
+		String doc = Jsoup.connect("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + channelId + "&key=" + apiKey).userAgent("Mozilla").ignoreContentType(true).get().html();
 		
 		start = doc.indexOf("subscriberCount") + 19;
 		end = doc.indexOf("\"", start + 1);
